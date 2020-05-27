@@ -1,0 +1,567 @@
+{
+    "sender_id": "f98980af9d844522a1f4df31f79add91",
+    "slots": {
+        "driver": null,
+        "from_loc": null,
+        "name": null,
+        "number": -1234,
+        "porter": null,
+        "requested_slot": null,
+        "terminal": null,
+        "time": null,
+        "to_loc": null
+    },
+    "latest_message": {
+        "intent": {
+            "name": "inform",
+            "confidence": 0.618389723
+        },
+        "entities": [
+            {
+                "start": 2,
+                "end": 7,
+                "text": "-1234",
+                "value": -1234,
+                "confidence": 1.0,
+                "additional_info": {
+                    "value": -1234,
+                    "type": "value"
+                },
+                "entity": "number",
+                "extractor": "DucklingHTTPExtractor"
+            },
+            {
+                "start": 0,
+                "end": 7,
+                "value": "as-1234",
+                "entity": "flight_ID",
+                "confidence": 0.8598682162,
+                "extractor": "CRFEntityExtractor"
+            },
+            {
+                "start": 0,
+                "end": 7,
+                "value": "as-1234",
+                "confidence": 1.0,
+                "entity": "flight_ID",
+                "extractor": "RegexEntityExtractor"
+            }
+        ],
+        "intent_ranking": [
+            {
+                "name": "inform",
+                "confidence": 0.618389723
+            },
+            {
+                "name": "book_cab",
+                "confidence": 0.0730836178
+            },
+            {
+                "name": "ask_train_details",
+                "confidence": 0.037455006
+            },
+            {
+                "name": "ask_for_handoff",
+                "confidence": 0.0236948931
+            },
+            {
+                "name": "affirm",
+                "confidence": 0.02234607
+            },
+            {
+                "name": "ask_currency_exchange",
+                "confidence": 0.0211820877
+            },
+            {
+                "name": "ask_flight_schedule",
+                "confidence": 0.0200472354
+            },
+            {
+                "name": "cancel_form",
+                "confidence": 0.0187975501
+            },
+            {
+                "name": "ask_store_promos",
+                "confidence": 0.0178611445
+            },
+            {
+                "name": "ask_flight_arrival",
+                "confidence": 0.0155082556
+            }
+        ],
+        "text": "as-1234"
+    },
+    "latest_event_time": 1583503221.9325325489,
+    "followup_action": null,
+    "paused": false,
+    "events": [
+        {
+            "event": "action",
+            "timestamp": 1583503204.2596538067,
+            "name": "action_session_start",
+            "policy": null,
+            "confidence": null
+        },
+        {
+            "event": "session_started",
+            "timestamp": 1583503204.2596671581
+        },
+        {
+            "event": "action",
+            "timestamp": 1583503204.2597067356,
+            "name": "action_listen",
+            "policy": null,
+            "confidence": null
+        },
+        {
+            "event": "user",
+            "timestamp": 1583503205.1025872231,
+            "text": "het",
+            "parse_data": {
+                "intent": {
+                    "name": "inform",
+                    "confidence": 0.225020222
+                },
+                "entities": [],
+                "intent_ranking": [
+                    {
+                        "name": "inform",
+                        "confidence": 0.225020222
+                    },
+                    {
+                        "name": "cancel_form",
+                        "confidence": 0.0908176069
+                    },
+                    {
+                        "name": "book_cab",
+                        "confidence": 0.0877861073
+                    },
+                    {
+                        "name": "ask_train_details",
+                        "confidence": 0.0695415085
+                    },
+                    {
+                        "name": "affirm",
+                        "confidence": 0.0535726497
+                    },
+                    {
+                        "name": "ask_metro_details",
+                        "confidence": 0.0505545909
+                    },
+                    {
+                        "name": "ask_nearby_hotels",
+                        "confidence": 0.042594216
+                    },
+                    {
+                        "name": "ask_currency_exchange",
+                        "confidence": 0.0345587229
+                    },
+                    {
+                        "name": "ask_flight_arrival",
+                        "confidence": 0.0320479672
+                    },
+                    {
+                        "name": "ask_flight_schedule",
+                        "confidence": 0.0316046389
+                    }
+                ],
+                "text": "het"
+            },
+            "input_channel": "socketio",
+            "message_id": "f08444d5a36e4047b489bfbd3f668246",
+            "metadata": {}
+        },
+        {
+            "event": "action",
+            "timestamp": 1583503206.1579105854,
+            "name": "action_default_fallback",
+            "policy": "policy_3_FallbackPolicy",
+            "confidence": 1.0
+        },
+        {
+            "event": "bot",
+            "timestamp": 1583503206.1579236984,
+            "text": "Sorry I couldn't understand you ☹. Please be specific. Or you can call customer care for more help",
+            "data": {
+                "elements": null,
+                "quick_replies": null,
+                "buttons": null,
+                "attachment": null,
+                "image": null,
+                "custom": null
+            },
+            "metadata": {}
+        },
+        {
+            "event": "rewind",
+            "timestamp": 1583503206.1579301357
+        },
+        {
+            "event": "action",
+            "timestamp": 1583503206.3181877136,
+            "name": "action_listen",
+            "policy": null,
+            "confidence": 1.0
+        },
+        {
+            "event": "user",
+            "timestamp": 1583503210.9457485676,
+            "text": "hey",
+            "parse_data": {
+                "intent": {
+                    "name": "greet",
+                    "confidence": 0.590430965
+                },
+                "entities": [],
+                "intent_ranking": [
+                    {
+                        "name": "greet",
+                        "confidence": 0.590430965
+                    },
+                    {
+                        "name": "affirm",
+                        "confidence": 0.0966581342
+                    },
+                    {
+                        "name": "deny",
+                        "confidence": 0.0500941455
+                    },
+                    {
+                        "name": "goodbye",
+                        "confidence": 0.0428388582
+                    },
+                    {
+                        "name": "mood_great",
+                        "confidence": 0.0332799902
+                    },
+                    {
+                        "name": "ask_for_reason",
+                        "confidence": 0.0281393868
+                    },
+                    {
+                        "name": "cancel_form",
+                        "confidence": 0.0226524276
+                    },
+                    {
+                        "name": "ask_nearby_hotels",
+                        "confidence": 0.0127329512
+                    },
+                    {
+                        "name": "mood_unhappy",
+                        "confidence": 0.0124868953
+                    },
+                    {
+                        "name": "book_cab",
+                        "confidence": 0.011017185
+                    }
+                ],
+                "text": "hey"
+            },
+            "input_channel": "socketio",
+            "message_id": "a0b028d1898b4b44be42683356bb6200",
+            "metadata": {}
+        },
+        {
+            "event": "action",
+            "timestamp": 1583503210.9556722641,
+            "name": "utter_greet",
+            "policy": "policy_0_MemoizationPolicy",
+            "confidence": 1.0
+        },
+        {
+            "event": "bot",
+            "timestamp": 1583503210.9556863308,
+            "text": "Hey! What Can I do for you? 😀",
+            "data": {
+                "elements": null,
+                "quick_replies": null,
+                "buttons": [
+                    {
+                        "payload": "/transport",
+                        "title": "Transport"
+                    },
+                    {
+                        "payload": "/flights",
+                        "title": "Flights"
+                    },
+                    {
+                        "payload": "/hotels",
+                        "title": "Hotels"
+                    },
+                    {
+                        "payload": "/services",
+                        "title": "Services"
+                    },
+                    {
+                        "payload": "/others",
+                        "title": "Others"
+                    }
+                ],
+                "attachment": null,
+                "image": null,
+                "custom": null
+            },
+            "metadata": {}
+        },
+        {
+            "event": "action",
+            "timestamp": 1583503210.9668059349,
+            "name": "action_listen",
+            "policy": "policy_0_MemoizationPolicy",
+            "confidence": 1.0
+        },
+        {
+            "event": "user",
+            "timestamp": 1583503216.4585819244,
+            "text": "flight please",
+            "parse_data": {
+                "intent": {
+                    "name": "ask_flight_schedule",
+                    "confidence": 0.9791931151
+                },
+                "entities": [],
+                "intent_ranking": [
+                    {
+                        "name": "ask_flight_schedule",
+                        "confidence": 0.9791931151
+                    },
+                    {
+                        "name": "ask_flight_arrival",
+                        "confidence": 0.0070419788
+                    },
+                    {
+                        "name": "ask_ticket_counter",
+                        "confidence": 0.0022349875
+                    },
+                    {
+                        "name": "goodbye",
+                        "confidence": 0.001301009
+                    },
+                    {
+                        "name": "book_cab",
+                        "confidence": 0.0012265121
+                    },
+                    {
+                        "name": "ask_store_promos",
+                        "confidence": 0.0009400427
+                    },
+                    {
+                        "name": "ask_bus_station",
+                        "confidence": 0.0008357317
+                    },
+                    {
+                        "name": "ask_nearby_hotels",
+                        "confidence": 0.0007410841
+                    },
+                    {
+                        "name": "inform",
+                        "confidence": 0.0007140484
+                    },
+                    {
+                        "name": "ask_metro_details",
+                        "confidence": 0.0006550554
+                    }
+                ],
+                "text": "flight please"
+            },
+            "input_channel": "socketio",
+            "message_id": "516797d6317b412589945d3f52739629",
+            "metadata": {}
+        },
+        {
+            "event": "action",
+            "timestamp": 1583503216.467769146,
+            "name": "utter_ask_flight_id",
+            "policy": "policy_0_MemoizationPolicy",
+            "confidence": 1.0
+        },
+        {
+            "event": "bot",
+            "timestamp": 1583503216.4677836895,
+            "text": "Please provide your flight ID",
+            "data": {
+                "elements": null,
+                "quick_replies": null,
+                "buttons": null,
+                "attachment": null,
+                "image": null,
+                "custom": null
+            },
+            "metadata": {}
+        },
+        {
+            "event": "action",
+            "timestamp": 1583503216.4806473255,
+            "name": "action_listen",
+            "policy": "policy_0_MemoizationPolicy",
+            "confidence": 1.0
+        },
+        {
+            "event": "user",
+            "timestamp": 1583503221.5005786419,
+            "text": "as-1234",
+            "parse_data": {
+                "intent": {
+                    "name": "inform",
+                    "confidence": 0.618389723
+                },
+                "entities": [
+                    {
+                        "start": 2,
+                        "end": 7,
+                        "text": "-1234",
+                        "value": -1234,
+                        "confidence": 1.0,
+                        "additional_info": {
+                            "value": -1234,
+                            "type": "value"
+                        },
+                        "entity": "number",
+                        "extractor": "DucklingHTTPExtractor"
+                    },
+                    {
+                        "start": 0,
+                        "end": 7,
+                        "value": "as-1234",
+                        "entity": "flight_ID",
+                        "confidence": 0.8598682162,
+                        "extractor": "CRFEntityExtractor"
+                    },
+                    {
+                        "start": 0,
+                        "end": 7,
+                        "value": "as-1234",
+                        "confidence": 1.0,
+                        "entity": "flight_ID",
+                        "extractor": "RegexEntityExtractor"
+                    }
+                ],
+                "intent_ranking": [
+                    {
+                        "name": "inform",
+                        "confidence": 0.618389723
+                    },
+                    {
+                        "name": "book_cab",
+                        "confidence": 0.0730836178
+                    },
+                    {
+                        "name": "ask_train_details",
+                        "confidence": 0.037455006
+                    },
+                    {
+                        "name": "ask_for_handoff",
+                        "confidence": 0.0236948931
+                    },
+                    {
+                        "name": "affirm",
+                        "confidence": 0.02234607
+                    },
+                    {
+                        "name": "ask_currency_exchange",
+                        "confidence": 0.0211820877
+                    },
+                    {
+                        "name": "ask_flight_schedule",
+                        "confidence": 0.0200472354
+                    },
+                    {
+                        "name": "cancel_form",
+                        "confidence": 0.0187975501
+                    },
+                    {
+                        "name": "ask_store_promos",
+                        "confidence": 0.0178611445
+                    },
+                    {
+                        "name": "ask_flight_arrival",
+                        "confidence": 0.0155082556
+                    }
+                ],
+                "text": "as-1234"
+            },
+            "input_channel": "socketio",
+            "message_id": "750d1c2614e54d2f9fa1a62312d5c39f",
+            "metadata": {}
+        },
+        {
+            "event": "slot",
+            "timestamp": 1583503221.5006685257,
+            "name": "number",
+            "value": -1234
+        },
+        {
+            "event": "action",
+            "timestamp": 1583503221.9047312737,
+            "name": "action_get_flight_schedule",
+            "policy": "policy_1_KerasPolicy",
+            "confidence": 0.9968928099
+        },
+        {
+            "event": "bot",
+            "timestamp": 1583503221.9047493935,
+            "text": "Details for flight as-1234:  \nArrival Time: 8  \nDeparture Time: 11",
+            "data": {
+                "elements": null,
+                "quick_replies": null,
+                "buttons": null,
+                "attachment": null,
+                "image": null,
+                "custom": null
+            },
+            "metadata": {}
+        },
+        {
+            "event": "action",
+            "timestamp": 1583503221.9172000885,
+            "name": "utter_enquiry",
+            "policy": "policy_1_KerasPolicy",
+            "confidence": 0.9999953508
+        },
+        {
+            "event": "bot",
+            "timestamp": 1583503221.9172124863,
+            "text": "Would you like anything else ? 🙂",
+            "data": {
+                "elements": null,
+                "quick_replies": null,
+                "buttons": [
+                    {
+                        "payload": "/transport",
+                        "title": "Transport"
+                    },
+                    {
+                        "payload": "/flights",
+                        "title": "Flights"
+                    },
+                    {
+                        "payload": "/hotels",
+                        "title": "Hotels"
+                    },
+                    {
+                        "payload": "/services",
+                        "title": "Services"
+                    },
+                    {
+                        "payload": "/others",
+                        "title": "Others"
+                    }
+                ],
+                "attachment": null,
+                "image": null,
+                "custom": null
+            },
+            "metadata": {}
+        },
+        {
+            "event": "action",
+            "timestamp": 1583503221.9325325489,
+            "name": "action_listen",
+            "policy": "policy_1_KerasPolicy",
+            "confidence": 0.9998992682
+        }
+    ],
+    "latest_input_channel": "socketio",
+    "active_form": {},
+    "latest_action_name": "action_listen"
+}

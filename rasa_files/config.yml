@@ -1,0 +1,39 @@
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: en
+pipeline:
+  - name: "SpacyNLP"
+  - name: "SpacyTokenizer"
+  - name: "SpacyFeaturizer"
+  - name: "RegexFeaturizer"
+  - name: "DucklingHTTPExtractor"
+    # url of the running duckling server
+    url: "http://localhost:8000"
+    # dimensions to extract
+    dimensions: ["time", "distance", "number", "duration", "date"]
+    # allows you to configure the locale, by default the language is
+    # used
+    locale: "en_IN"
+    # if not set the default timezone of Duckling is going to be used
+    # needed to calculate dates from relative expressions like "tomorrow"
+    timezone: "Asia/Kolkata"
+    # Timeout for receiving response from http url of the running duckling server
+    # if not set the default timeout of duckling http url is set to 3 seconds.
+    timeout: 3
+  - name: "CRFEntityExtractor"
+  - name: "regex.RegexEntityExtractor"
+  - name: "EntitySynonymMapper"
+  - name: "SklearnIntentClassifier"
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+  - name: MemoizationPolicy
+  - name: KerasPolicy
+  - name: MappingPolicy
+  - name: "FallbackPolicy"
+    nlu_threshold: 0.25
+    core_threshold: 0.1
+    ambiguity_threshold: 0.001
+    fallback_action_name: "action_custom_fallback"
+  - name: "FormPolicy"

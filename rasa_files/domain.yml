@@ -1,0 +1,312 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - inform
+  - book_cab
+  - get_driver_details
+  - ask_flight_schedule
+  - ask_flight_arrival
+  - ask_nearby_hotels
+  - ask_for_handoff
+  - transport
+  - flights
+  - services
+  - others
+  - hotels
+  - ask_ticket_counter
+  - ask_currency_exchange
+  - ask_currency_counter
+  - ask_parking_details
+  - ask_metro_details
+  - ask_train_details
+  - ask_store_promos
+  - ask_bus_station
+  - ask_restaurant_details
+  - ask_what_can_you_do
+  - cancel_form
+  - ask_for_reason
+  - current_location
+
+actions:
+  - action_utter_greet
+  - utter_ask_book_same_cab
+  - action_check_booking_exists
+  - utter_default
+  - utter_greet
+  - utter_did_that_help
+  - utter_happy
+  - utter_goodbye
+  - utter_ask_location
+  - action_book_cab
+  - action_extract_locations
+  - utter_driver_details
+  - utter_ask_flight_id
+  - action_get_flight_schedule
+  - action_get_flight_arrival
+  - action_custom_restart
+  - action_get_nearby_hotels
+  - utter_transport_path_details
+  - utter_flights_path_details
+  - utter_hotels_path_details
+  - utter_services_path_details
+  - utter_others_path_details
+  - action_handoff
+  - utter_ticket_counter_location
+  - action_get_parking_details
+  - action_get_metro_details
+  - utter_ask_train_pnr
+  - action_get_train_details
+  - action_get_currency_counter
+  - action_get_currency_exchange
+  - action_get_store_promos
+  - action_get_bus_station
+  - utter_ask_name
+  - utter_ask_number
+  - utter_ask_from_loc
+  - utter_ask_to_loc
+  - utter_ask_time
+  - utter_ask_porter
+  - action_get_restaurants
+  - utter_functionalities
+  - utter_ask_terminal
+  - utter_ask_confirmation
+  - utter_cancelled
+  - action_reset_cab_booking_info
+  - utter_reason
+  - utter_ask_cancel_previous_cab
+  - action_custom_fallback
+
+forms:
+  - book_cab_form
+
+entities:
+  - loc
+  - transport
+  - flight_ID
+  - train_pnr
+  - currency
+  - name
+  - number
+  - time
+
+slots:
+  from_loc:
+    type: unfeaturized
+  to_loc:
+    type: unfeaturized
+  time:
+    type: unfeaturized
+  name:
+    type: unfeaturized
+  number:
+    type: unfeaturized
+  porter:
+    type: unfeaturized
+  terminal:
+    type: unfeaturized
+  prev_cab:
+    type: unfeaturized
+  pc_from_loc:
+    type: unfeaturized
+  pc_to_loc:
+    type: unfeaturized
+  book_same_cab:
+    type: unfeaturized
+  driver:
+    type: unfeaturized
+  cancel_previous_cab:
+    type: unfeaturized
+  booking_exists:
+    type: bool
+  location:
+    type: unfeaturized
+
+responses:
+  utter_default:
+    - text: "Sorry I couldn't understand you 😔. Please be specific. Or you can call customer care for more help"
+
+  utter_greet:
+    - text: "Hey {name}! What can I do for you? 😀"
+      buttons:
+        - title: "Transport"
+          payload: "/transport"
+        - title: "Flights"
+          payload: "/flights"
+        - title: "Hotels"
+          payload: "/hotels"
+        - title: "Services"
+          payload: "/services"
+        - title: "Others"
+          payload: "/others"
+
+  utter_did_that_help:
+    - text: "Did that help you? 🤗"
+
+  utter_happy:
+    - text: "Great, carry on! 😀"
+
+  utter_goodbye:
+    - text: "Bye 👋"
+
+  utter_book_success:
+    - text: "Succesfully booked cab from {from_loc} to {to_loc} 😀"
+
+  utter_ask_location:
+    - text: "From where to where ?"
+
+  utter_driver_details:
+    - text: "Your driver is {driver}"
+
+  utter_ask_flight_id:
+    - text: "Please provide your flight ID"
+
+  utter_ticket_counter_location:
+    - text: Ticket Counter is nearby the [Main terminal](https://goo.gl/maps/KEngc6ybjKqHn3dp9)
+
+  utter_enquiry:
+    - text: "Would you like anything else ? 🙂"
+      buttons:
+        - title: "Transport"
+          payload: "/transport"
+        - title: "Flights"
+          payload: "/flights"
+        - title: "Hotels"
+          payload: "/hotels"
+        - title: "Services"
+          payload: "/services"
+        - title: "Others"
+          payload: "/others"
+
+  utter_flights_path_details:
+    - text: "Here's what I can do"
+      buttons:
+        - title: "Flight Details"
+          payload: "/ask_flight_schedule"
+
+  utter_transport_path_details:
+    - text: "Here's what I can do"
+      buttons:
+        - title: "Book Cab"
+          payload: "/book_cab"
+        - title: "Train Details"
+          payload: "/ask_train_details"
+        - title: "Metro Details"
+          payload: "/ask_metro_details"
+        - title: "Bus Services"
+          payload: "/ask_bus_station"
+
+  utter_hotels_path_details:
+    - text: "Here's what I can do"
+      buttons:
+        - title: "View Nearby Hotels"
+          payload: "/ask_nearby_hotels"
+
+  utter_services_path_details:
+    - text: "Here's what I can do"
+      buttons:
+        - title: "Ticket Counter"
+          payload: "/ask_ticket_counter"
+        - title: "Exchange Rates"
+          payload: "/ask_currency_exchange"
+        - title: "Exchange Counter"
+          payload: "/ask_currency_counter"
+        - title: "Car Parking"
+          payload: "/ask_parking_details"
+
+  utter_others_path_details:
+    - text: "Here's what I can do"
+      buttons:
+        - title: "Customer Care"
+          payload: "/ask_for_handoff"
+        - title: "Store Promos"
+          payload: "/ask_store_promos"
+        - title: "Food"
+          payload: "/ask_restaurant_details"
+        - title: "What can you do ?"
+          payload: "/ask_what_can_you_do"
+
+  utter_ask_train_pnr:
+    - text: "Please give me the PNR number of your train"
+
+  utter_ask_currency_exchange:
+    - text: "Tell me which currency exchange rate you need. For example: USD/INR 💱 "
+
+  utter_ask_from_loc:
+    - text: "From where would you like to be picked up ?"
+      buttons:
+        - title: "Current Location"
+          payload: "/current_location"
+
+  utter_ask_to_loc:
+    - text: "Where would you like to go to ?"
+
+  utter_ask_name:
+    - text: "Please provide your name."
+
+  utter_ask_time:
+    - text: "At what time would you like to be picked up ? 🕛"
+
+  utter_ask_number:
+    - text: "Please provide your mobile number. 📱"
+
+  utter_ask_porter:
+    - text: "Would you like a porter ? 🚚"
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+
+  utter_ask_terminal:
+    - text: "At what terminal would you like the porter to pick your luggage up ?"
+
+  utter_ask_confirmation:
+    - text: "Are you sure you want to cancel ?"
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+
+  utter_cancelled:
+    - text: "Your ongoing booking has been cancelled"
+
+  utter_reason:
+    - text: "The details you provide here will be used for booking.   \n
+        Each detail is required for the booking to take place.   \n
+        Please provide correct details to ensure a good service."
+
+  utter_submit:
+    - text: "Please wait while the cab is being booked."
+
+  utter_ask_cancel_previous_cab:
+    - text: "You already have an active cab booking. Would you like to cancel and book a new one ?"
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+
+  utter_ask_book_same_cab:
+    - text: "You recently booked a cab from {pc_from_loc} to {pc_to_loc}. Would you like to book the same cab again ?"
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+
+  utter_functionalities:
+    - text: "Here is what I'm capable of:  \n
+        🚖 Cab Bookings  \n
+        ✈ Flight Details  \n
+        🚂 Provide details of transport services like bus, train, metro  \n
+        🏩 Suggest and Book Hotels  \n
+        ⚙ Details about parking, stores, restaurants, and counters for tickets and currency exchange  \n"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
